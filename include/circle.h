@@ -1,0 +1,142 @@
+//#ifndef CIRC_H_
+//#define CIRC_H_
+//#include <iostream>
+//#include <cmath>
+
+//// Define pi as a constant
+//const float pi = 3.142;
+
+////class circle
+
+////{
+
+////private:
+////    float radius;
+
+////public:
+////    // Constructor
+////    circle();
+
+////    circle(float r);
+////    // Destructor
+////    ~circle();
+
+////    void setradius(float r);
+
+////    float getradius();
+
+////    // Define equation to calculate the area
+////    float area()
+////    {return pi *(radius*radius);}
+
+////    // Define equation to calculate the circumference
+////    float circumference()
+////    {return 2 * pi * radius;}
+
+////    // Define equation to calculate the diameter
+////    float diameter()
+////    {return 2 * radius;}
+
+////    void print();
+
+////};
+
+//#include <rigidBody.h>
+
+
+
+//// Estimate Pi
+
+//#define MaxPolyVertexCount 64
+
+//struct Shape
+//{
+//  enum Type
+//  {
+//    eCircle,
+
+//  };
+
+//  Shape( ) {}
+//  virtual Shape *Clone( void ) const = 0;
+//  virtual void Initialize( void ) = 0;
+//  virtual void ComputeMass( ngl::Real density ) = 0;
+//  virtual void SetOrient( ngl::Real radians ) = 0;
+//  virtual void Draw( void ) const = 0;
+//  virtual Type GetType( void ) const = 0;
+
+//  RBody *body;
+
+//  // For circle shape
+//  float radius;
+
+//};
+
+//struct Circle : public Shape
+//{
+//  Circle( ngl::Real r )
+//  {
+//    radius = r;
+//  }
+
+//  Shape *Clone( void ) const
+//  {
+//    return new Circle( radius );
+//  }
+
+//  void Initialize( void )
+//  {
+//    ComputeMass( 1.0f );
+//  }
+
+//  void ComputeMass( ngl::Real density )
+//  {
+//    body->m = pi * radius * radius * density;
+//    body->im = (body->m) ? 1.0f / body->m : 0.0f;
+//    body->I = body->m * radius * radius;
+//    body->iI = (body->I) ? 1.0f / body->I : 0.0f;
+//  }
+
+//  void SetOrient( ngl::Real radians )
+//  {
+//  }
+
+//  void Draw( void ) const
+//  {
+//    const uint32_t k_segments = 20;
+
+//    // Render a circle with a bunch of lines
+//    glColor3f( body->r, body->g, body->b );
+//    glBegin( GL_LINE_LOOP );
+//    ngl::Real theta = body->orient;
+//    ngl::Real inc = pi * 2.0f / (ngl::Real)k_segments;
+//    for(uint32_t i = 0; i < k_segments; ++i)
+//    {
+//      theta += inc;
+//      ngl::Vec2 p( std::cos( theta ), std::sin( theta ) );
+//      p *= radius;
+//      p += body->position;
+//      glVertex2f( p.m_x, p.m_y );
+//    }
+//    glEnd( );
+
+//    // Render line within circle so orientation is visible
+//    glBegin( GL_LINE_STRIP );
+//    ngl::Vec2 r( 0, 1.0f );
+//    ngl::Real c = std::cos( body->orient );
+//    ngl::Real s = std::sin( body->orient );
+//    r.set( r.m_x * c - r.m_y * s, r.m_x * s + r.m_y * c );
+//    r *= radius;
+//    r = r + body->position;
+//    glVertex2f( body->position.m_x, body->position.m_y );
+//    glVertex2f( r.m_x, r.m_y );
+//    glEnd( );
+//  }
+
+//  Type GetType( void ) const
+//  {
+//    return eCircle;
+//  }
+//};
+
+//#endif
